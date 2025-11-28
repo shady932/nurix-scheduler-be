@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "cc7de799-10a2-41ac-814f-8b7c100f0955",
+		"name": "Scheduler",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16037876"
+	},
+	"item": [
+		{
+			"name": "logs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-user-auth",
+						"value": "9c5e4f6e-7604-4871-a3af-0fe4b23c5c7d",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/v1/logs",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"v1",
+						"logs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "job",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-user-auth",
+						"value": "ee0a0d73-07d1-42de-93e3-e51accd363aa",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"taskType\": \"sleep\",\n    \"payload\": {\n        \"add\": \"saswata932@gmail.com\",\n        \"body\": \"Hi\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/v1/jobs",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"v1",
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "jobs",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-user-auth",
+						"value": "ee0a0d73-07d1-42de-93e3-e51accd363aa",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/v1/jobs?status=dlq",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"v1",
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "cursor",
+							"value": "1764304199449",
+							"disabled": true
+						},
+						{
+							"key": "jobId",
+							"value": "6ed50d56-016c-4d1a-84dc-4f8600c85f2f",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "dlq"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "report",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-user-auth",
+						"value": "9c5e4f6e-7604-4871-a3af-0fe4b23c5c7d",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/v1/dashboard/jobs/report",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"v1",
+						"dashboard",
+						"jobs",
+						"report"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dashboard logs",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-user-auth",
+						"value": "9c5e4f6e-7604-4871-a3af-0fe4b23c5c7d",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/v1/dashboard/logs",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"v1",
+						"dashboard",
+						"logs"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}

@@ -227,5 +227,4 @@ npm run migrate
 ---
 
 ## 📬 Author / Maintainer
-Your Name  
-Senior Software Engineer
+Saswata Haldar
